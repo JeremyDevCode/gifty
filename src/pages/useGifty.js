@@ -56,4 +56,4 @@ function useGifty() {
   return { state, stateUpdaters };
 }
 
-export { useGifty };
+export default useGifty ;

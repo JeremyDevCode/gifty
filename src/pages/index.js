@@ -1,12 +1,9 @@
-import Head from "next/head";
-import Image from "next/image";
 import { Header } from "../components/Header";
 import { Navbar } from "../components/Navbar";
 import { Search } from "../components/Search";
 import { Trending } from "../components/Trending";
-import styles from "../styles/Home.module.css";
-import { useGifty } from "./useGifty";
-import { useCallback, useRef, useState } from "react";
+import useGifty from "./useGifty";
+import { useState } from "react";
 
 export default function Home() {
   const [query, setQuery] = useState("");
