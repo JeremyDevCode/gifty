@@ -1,0 +1,15 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 248px);
+    grid-template-rows: auto;
+    justify-content: center;
+    column-gap: 15px;
+
+}
+
+.gif {
+    width: 248px;
+    background-color: red;
+    border-radius: 16px;
+    grid-row-end:span 45;
+}
