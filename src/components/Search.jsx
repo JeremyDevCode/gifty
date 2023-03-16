@@ -1,14 +1,16 @@
-import React from "react";
+import Link from "next/link";
+import React, { useState } from "react";
 import styles from "../styles/Search.module.css";
 
-function Search({ query, setQuery, setOffset }) {
+function Search() {
+  const [query, setQuery] = useState("");
+
   function handleSearch(e) {
     setQuery(e.target.value);
-    setOffset(25);
   }
 
   return (
-    <div className="flex items-center justify-center w-full pb-10">
+    <div className="flex sticky items-center justify-center w-full pb-10">
       <div className="flex items-center min-h-[72px] h-[72px] w-[600px] relative">
         <input
           value={query}
@@ -18,7 +20,12 @@ function Search({ query, setQuery, setOffset }) {
           placeholder="Search a Gif"
         />
         <div className={styles.search}>
-          <button className="text-lg font-semibold ">Get Started</button>
+          <Link
+            className="flex justify-center items-center rounded-full text-lg font-semibold w-full h-full"
+            href={query === "" ? `/` : `/search/${query}`}
+          >
+            Get Started
+          </Link>
         </div>
       </div>
     </div>
