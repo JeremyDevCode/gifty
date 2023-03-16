@@ -9,7 +9,9 @@ function Menu() {
         <MessageIcon />
       </li>
       <li>
-        <GithubIcon />
+        <a href="https://github.com/JeremyDevCode/gifty" target="_blank">
+          <GithubIcon />
+        </a>
       </li>
     </ul>
   );
