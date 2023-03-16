@@ -28,7 +28,7 @@ function Trending({ gifs, query }) {
               if (trend?.images.downsized.url) {
                 return (
                   <img
-                    className="w-[248px] rounded-md object-cover mb-5"
+                    className="w-full rounded-md object-cover mb-5"
                     key={trend?.id}
                     src={trend?.images?.downsized?.url}
                     alt={trend?.title}
@@ -42,7 +42,7 @@ function Trending({ gifs, query }) {
               if (trend?.images.downsized.url) {
                 return (
                   <img
-                    className="w-[248px] rounded-md object-cover mb-5"
+                    className="w-full rounded-md object-cover mb-5"
                     key={trend?.id}
                     src={trend?.images?.downsized?.url}
                     alt={trend?.title}
