@@ -26,7 +26,7 @@ function GifsSection({ gifs, isSearching }) {
         {isSearching ? <ThunderIcon /> : <TrendingIcon />}
         <h2 className="text-primaryBText font-semibold text-xl">Trending</h2>
       </div>
-      <div className="columns-2 sm:columns-4 gap-5">
+      <div className="columns-2 sm:columns-3 lg:columns-4 gap-5">
         {gifs?.map((gif) => {
           if (gif?.images.downsized.url) {
             return (
