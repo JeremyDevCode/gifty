@@ -4,7 +4,6 @@ import { GifsSection } from "../../components/GifsSection";
 import { Header } from "../../components/Header";
 import { Navbar } from "../../components/Navbar";
 import { Search } from "../../components/Search";
-import axios from "axios";
 import { useGifty } from "../../modules/useGifty";
 import { Footer } from "../../components/Footer";
 
