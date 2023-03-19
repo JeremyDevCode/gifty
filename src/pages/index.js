@@ -3,7 +3,6 @@ import { Navbar } from "../components/Navbar";
 import { Search } from "../components/Search";
 import { GifsSection } from "../components/GifsSection";
 import { useGifty } from "../modules/useGifty";
-import { useEffect, useState } from "react";
 import { Footer } from "../components/Footer";
 
 export default function Home() {
