@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import ThunderIcon from "../assets/icons/ThunderIcon";
 import { TrendingIcon } from "../assets/icons/TrendingIcon";
+import { CopiedButton } from "./CopiedButton";
 import { CopyButton } from "./CopyButton";
+import { Loading } from "./Loading";
 
-function GifsSection({ gifs, isSearching }) {
+function GifsSection({ gifs, loading, isSearching }) {
   const [check, setCheck] = useState(false);
 
   function copyImage(source) {
@@ -27,6 +29,7 @@ function GifsSection({ gifs, isSearching }) {
         {isSearching ? <ThunderIcon /> : <TrendingIcon />}
         <h2 className="text-primaryBText font-semibold text-xl">Trending</h2>
       </div>
+      {loading && <Loading />}
       <div className="columns-2 sm:columns-3 lg:columns-4 gap-5">
         {gifs?.map((gif) => {
           if (gif?.images.downsized.url) {
@@ -42,9 +45,12 @@ function GifsSection({ gifs, isSearching }) {
                   alt={gif?.title}
                 />
                 <div className="hidden absolute w-full h-full bg-[#0A0A0A80] group-hover/details:flex">
-                  <CopyButton
-                    handleClick={() => copyImage(gif?.images?.downsized?.url)}
-                  />
+                  {!check && (
+                    <CopyButton
+                      handleClick={() => copyImage(gif?.images?.downsized?.url)}
+                    />
+                  )}
+                  {check && <CopiedButton />}
                 </div>
               </div>
             );

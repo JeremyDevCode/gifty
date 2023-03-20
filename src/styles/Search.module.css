@@ -1,32 +1,44 @@
 .search {
-    display: flex;
-    position: absolute;
-    align-items: center;
-    justify-content: center;
-    border-radius: 75px;
-    z-index: 1;
-    width: 150px;
-    height: 52px;
-    right: 0.5rem;
-    cursor: pointer;
-    background-image: linear-gradient(to right, #007CF0, #00DFD8, #7928CA, #FF0080, #FF4D4D, #F9CB28);
-    background-size: 500%;
-    animation: animated 9s infinite;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  border-radius: 75px;
+  z-index: 1;
+  width: 150px;
+  height: 52px;
+  right: 0.5rem;
+  cursor: pointer;
+  background-image: linear-gradient(
+    to right,
+    #007cf0,
+    #00dfd8,
+    #7928ca,
+    #ff0080,
+    #ff4d4d,
+    #f9cb28
+  );
+  background-size: 500%;
+  animation: animated 9s infinite;
 }
 .search:hover {
-    scale: 0.95;
+  scale: 0.95;
 }
 
 @keyframes animated {
-    0%, 16.667%, 100% {
-        background-position: 0%;
-    }
-    33.333%, 50% {
-        background-position: 50%;
-    }
-    66%, 90% {
-        background-position: 100%;
-    }
+  0%,
+  16.667%,
+  100% {
+    background-position: 0%;
+  }
+  33.333%,
+  50% {
+    background-position: 50%;
+  }
+  66%,
+  90% {
+    background-position: 100%;
+  }
 }
 
 /* @keyframes animated {

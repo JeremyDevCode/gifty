@@ -23,12 +23,12 @@ function Search() {
     <div
       className={`flex ${
         sticky ? "sticky top-[-1px]" : "block"
-      } items-center justify-center w-full pb-10 transition-all`}
+      } items-center justify-center w-full pb-10 transition-all z-50`}
     >
       <form
         onSubmit={handleAction}
         ref={stickyRef}
-        className={`flex items-center min-h-[72px] h-[72px] w-[600px] relative`}
+        className={`flex items-center h-[72px] w-[600px] relative`}
       >
         <input
           value={query}
@@ -37,7 +37,7 @@ function Search() {
           className={`w-full h-full border-0 ${
             !sticky ? "rounded-full" : "rounded-b-lg rounded-t-none"
           } outline-none bg-primaryBButton hover:bg-hoverPrimaryBButton focus:bg-hoverPrimaryBButton py-[16px] pr-[175px] pl-[30px] text-xl`}
-          placeholder="Search a Gif"
+          placeholder="Funny thing that's going through your mind"
         />
         <button className={styles.search}>
           <Link

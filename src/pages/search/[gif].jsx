@@ -11,10 +11,10 @@ const Gif = () => {
   const router = useRouter();
   const { gif } = router?.query;
   const { state, stateUpdaters } = useGifty();
-  const { gifs } = state;
+  const { gifs, loading } = state;
   const { useGiftySearch } = stateUpdaters;
   useEffect(() => {
-    useGiftySearch(gif);
+    gif && useGiftySearch(gif);
   }, [gif]);
 
   return (
@@ -23,7 +23,7 @@ const Gif = () => {
         <Navbar />
         <Header />
         <Search />
-        <GifsSection gifs={gifs} isSearching={true} />
+        <GifsSection gifs={gifs} loading={loading} isSearching={true} />
         <Footer />
       </div>
     </div>

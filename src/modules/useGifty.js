@@ -10,6 +10,7 @@ function useGifty() {
 
   const useGiftySearch = (query) => {
     setLoading(true);
+    setGifs([]);
     setError(false);
     axios({
       method: "GET",
@@ -33,11 +34,23 @@ function useGifty() {
 
   useEffect(() => {
     function getTreding() {
-      fetch(
-        "https://api.giphy.com/v1/gifs/trending?api_key=Bn7gSVZdOT2DiCPmEMKza4EVjxpif7qh&limit=25&rating=g"
-      )
-        .then((response) => response.json())
-        .then((data) => setTrending(data.data));
+      setLoading(true);
+      setGifs([]);
+      setError(false);
+      axios({
+        method: "GET",
+        url: "https://api.giphy.com/v1/gifs/trending",
+        params: {
+          api_key: process.env.NEXT_PUBLIC_API_KEY,
+        },
+      })
+        .then((res) => {
+          setTrending(res.data.data);
+          setLoading(false);
+        })
+        .catch((e) => {
+          setError(true);
+        });
     }
     getTreding();
   }, []);

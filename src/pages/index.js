@@ -8,7 +8,7 @@ import Head from "next/head";
 
 export default function Home() {
   const { state } = useGifty();
-  const { trending } = state;
+  const { trending, loading } = state;
   return (
     <div className="w-screen bg-bgBlack h-fit min-h-screen text-primaryBText">
       <Head>
@@ -22,7 +22,7 @@ export default function Home() {
         <Navbar />
         <Header />
         <Search />
-        <GifsSection gifs={trending} isSearching={false} />
+        <GifsSection gifs={trending} loading={loading} isSearching={false} />
         <Footer />
       </div>
     </div>
