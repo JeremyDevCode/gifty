@@ -6,7 +6,9 @@ function Menu() {
   return (
     <ul className="flex gap-5">
       <li>
-        <MessageIcon />
+        <a href="mailto:jeremydevcode@gmail.com">
+          <MessageIcon />
+        </a>
       </li>
       <li>
         <a href="https://github.com/JeremyDevCode/gifty" target="_blank">

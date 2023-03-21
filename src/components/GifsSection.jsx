@@ -13,7 +13,13 @@ function GifsSection({ gifs, loading, isSearching }) {
       </div>
       {loading && <Loading />}
       <div className="columns-2 sm:columns-3 lg:columns-4 gap-5">
-        <Gif gifs={gifs} />
+        {gifs?.map((gif) => {
+          if (gif?.images.downsized.url) {
+            return <Gif key={gif.id} gif={gif} />;
+          } else {
+            return null;
+          }
+        })}
       </div>
     </main>
   );
